@@ -10,10 +10,12 @@ GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 GPIO.setup(Switch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 
 while True: 
+    flag= 0
     # GPIO.input(Switch)와 GPIO.HIGH를 AND 연산으로 변경 가능
+    # flag =0 led off. flag=1 led on.
     if GPIO.input(Switch) == GPIO.HIGH:
         print("Button was pushed!")
     else:
         print("Button was not pushed!")        
-    time.sleep(0.5)
+    time.sleep(1)
     

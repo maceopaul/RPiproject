@@ -1,7 +1,10 @@
 import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 import time
 
-Switch= 10
+Red= 13
+Green= 15
+Blue= 17
+Switch= 37
 
 GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
@@ -12,7 +15,8 @@ GPIO.setup(Switch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 while True: 
     # GPIO.input(Switch)와 GPIO.HIGH를 AND 연산으로 변경 가능
     if GPIO.input(Switch) == GPIO.HIGH:
-        print("Button was pushed!")
+       
+ print("Button was pushed!")
     else:
         print("Button was not pushed!")        
     time.sleep(0.5)
